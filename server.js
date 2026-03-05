@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+
 const app = express();
 
 app.use(express.json());
@@ -21,6 +22,8 @@ app.post("/comments", (req, res) => {
     res.json({ status: "ok" });
 });
 
-app.listen(3000, () => {
-    console.log("Server ishlayapti: http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log("Server ishlayapti");
 });
